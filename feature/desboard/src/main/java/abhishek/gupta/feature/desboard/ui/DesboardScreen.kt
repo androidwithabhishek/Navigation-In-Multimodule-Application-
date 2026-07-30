@@ -1,5 +1,6 @@
 package abhishek.gupta.feature.auth.ui
 
+import android.R.attr.data
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -25,6 +26,7 @@ fun DashboardScreen(
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit,
     onGoAuthClick: () -> Unit,
+    userId: String
 ) {
     Box(
         modifier = modifier.fillMaxSize(),
@@ -63,6 +65,19 @@ fun DashboardScreen(
             ) {
                 Text(
                     text = "Go Back",
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Medium
+                )
+            }
+
+            OutlinedButton(
+                onClick = onBackClick,
+                modifier = Modifier
+                    .fillMaxWidth(0.75f)
+                    .height(50.dp)
+            ) {
+                Text(
+                    text = userId,
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Medium
                 )

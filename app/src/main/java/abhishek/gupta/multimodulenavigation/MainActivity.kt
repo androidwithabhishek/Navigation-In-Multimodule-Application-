@@ -1,7 +1,8 @@
 package abhishek.gupta.multimodulenavigation
 
 import abhishek.gupta.common.SubGraph
-import abhishek.gupta.multimodulenavigation.ui.DefaultNavigator
+import abhishek.gupta.multimodulenavigation.ui.MainNavigation
+import abhishek.gupta.multimodulenavigation.ui.navigation.DefaultNavigator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,13 +10,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import abhishek.gupta.multimodulenavigation.ui.theme.MultiModuleNavigationTheme
-import androidx.navigation.NavGraphBuilder
-import androidx.navigation.NavHost
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
@@ -46,19 +43,5 @@ class MainActivity : ComponentActivity() {
 
 }
 
-@Composable
-fun MainNavigation(
-    modifier: Modifier = Modifier,
-    navHostController: NavHostController,
-    defaultNavigator: DefaultNavigator,
-) {
 
-
-    NavHost(navHostController, startDestination = SubGraph.Auth) {
-
-        defaultNavigator.authNavigationFeatureApi.registerGraph(navHostController,this)
-        defaultNavigator.desboardNavigationFeatureApi.registerGraph(navHostController,this)
-    }
-
-}
 

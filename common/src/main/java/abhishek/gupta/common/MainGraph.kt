@@ -5,8 +5,8 @@ import kotlinx.serialization.Serializable
 sealed class MainGraph {
 
     @Serializable
-    data object AuthScreen : MainGraph()
+    data object  AuthScreen: MainGraph()
 
     @Serializable
-    data object DesboardScreen : MainGraph()
+    data class DashBoardScreen(val userId: String)  : MainGraph()
 }

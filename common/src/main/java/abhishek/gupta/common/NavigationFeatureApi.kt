@@ -3,7 +3,7 @@ package abhishek.gupta.common
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 
-interface NavigationFeatureApi {
+ interface NavigationFeatureApi {
 
 
 

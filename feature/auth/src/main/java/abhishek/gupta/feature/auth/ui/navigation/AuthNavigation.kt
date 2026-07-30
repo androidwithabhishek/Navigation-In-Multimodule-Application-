@@ -26,7 +26,7 @@ class AuthNavigationFeatureApiImpl : AuthNavigationFeatureApi {
 
                 AuthScreen(
                     onBackClick = { navHostController.popBackStack() },
-                    onGoDesClick = { navHostController.navigate(MainGraph.DesboardScreen) }
+                    onGoDesClick = { navHostController.navigate(MainGraph.DashBoardScreen(userId = "Abhishek Gupta")) }
                 )
 
             }

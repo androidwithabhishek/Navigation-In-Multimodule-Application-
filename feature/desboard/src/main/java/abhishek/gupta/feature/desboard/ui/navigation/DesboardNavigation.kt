@@ -9,27 +9,30 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import androidx.navigation.toRoute
 
-interface DesboardNavigationFeatureApi: NavigationFeatureApi{}
-
-
-
-class DesboardNavigationFeatureApiImpl : DesboardNavigationFeatureApi {
+interface DashboardNavigationFeatureApi: NavigationFeatureApi{}
+class DashboardNavigationFeatureApiImpl : DashboardNavigationFeatureApi {
     override fun registerGraph(
         navHostController: NavHostController,
         navGraphBuilder: NavGraphBuilder,
     ) {
-        navGraphBuilder.navigation<SubGraph.DesBoard>(startDestination = MainGraph.DesboardScreen) {
+        navGraphBuilder.navigation<SubGraph.DesBoard>(startDestination = MainGraph.DashBoardScreen(userId = "")) {
 
 
 
-            composable <MainGraph.DesboardScreen>{
+            composable <MainGraph.DashBoardScreen>{
+                    backStackEntry ->
 
+
+                val route = backStackEntry.toRoute<MainGraph.DashBoardScreen>()
 
                 DashboardScreen(
 
                     onBackClick = { navHostController.popBackStack() },
-                    onGoAuthClick = { navHostController.navigate(MainGraph.AuthScreen) }
+                    onGoAuthClick = { navHostController.navigate(MainGraph.AuthScreen)
+                    },
+                    userId = route.userId
                 )
 
 

@@ -1,7 +1,7 @@
 package abhishek.gupta.feature.desboard.di
 
-import abhishek.gupta.feature.desboard.ui.navigation.DesboardNavigationFeatureApi
-import abhishek.gupta.feature.desboard.ui.navigation.DesboardNavigationFeatureApiImpl
+import abhishek.gupta.feature.desboard.ui.navigation.DashboardNavigationFeatureApi
+import abhishek.gupta.feature.desboard.ui.navigation.DashboardNavigationFeatureApiImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ object HiltModule {
 
     @Provides
     @Singleton
-    fun providesDesboardNavigationFeatureApi(): DesboardNavigationFeatureApi {
-        return DesboardNavigationFeatureApiImpl()
+    fun providesDashboardNavigationFeatureApi(): DashboardNavigationFeatureApi {
+        return DashboardNavigationFeatureApiImpl()
     }
 }
